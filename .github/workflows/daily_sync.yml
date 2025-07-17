@@ -1,0 +1,26 @@
+name: Daily Supabase Sync
+
+on:
+  schedule:
+    - cron: '0 13 * * *'  # Every day at 8 AM Texas time (UTC-6 or UTC-5 with DST = UTC-5 → 13:00 UTC)
+  workflow_dispatch:     # Allow manual runs
+
+jobs:
+  run-daily-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install supabase requests pytz
+
+      - name: Run sync script
+        run: python baby_acapulco_power_bi.py
