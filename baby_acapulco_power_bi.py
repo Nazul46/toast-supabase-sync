@@ -7,9 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1kjGONiUJBokrYTXtkCh1Vxj_0x5z4SXv
 """
 
-# Install dependencies
-!pip install supabase requests pytz --quiet
-
 from supabase import create_client
 import requests
 import datetime
