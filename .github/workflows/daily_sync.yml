@@ -23,4 +23,4 @@ jobs:
           pip install supabase requests pytz
 
       - name: Run sync script
-        run: python Baby_Acapulco_Power BI_Daily.py
+        run: python baby_acapulco_power_bi_daily.py
